@@ -15,7 +15,8 @@ Use this skill to turn code and operational evidence into a document that anothe
 4. Record permissions, tenant or organization boundaries, status transitions, validation rules, transaction boundaries, retries, and failure behavior. Keep frontend validation separate from backend enforcement.
 5. Mark each statement as confirmed, inferred, or pending verification. Never invent a data source or business rule just because it is common in similar code.
 6. Fill the reference template in `references/业务逻辑说明模板.md`. Prefer stable paths, class/method names, SQL object names, and field mappings; add line numbers only when they are useful and currently verified.
-7. If the user requested documentation only, do not edit application source, database objects, or deployment configuration. If a source change was requested, update the document after the change and record the validation performed.
+7. Add a small Mermaid flowchart for the confirmed main path. Keep it to roughly 5-12 nodes; split complex functions into separate diagrams. Mark unknown or environment-dependent nodes as “待确认” instead of inventing a path.
+8. If the user requested documentation only, do not edit application source, database objects, or deployment configuration. If a source change was requested, update the document after the change and record the validation performed.
 
 ## Required data-source coverage
 
@@ -36,6 +37,7 @@ Return:
 
 - a short conclusion describing what the feature does and where its authoritative writes occur;
 - a complete Markdown document using the reference template;
+- a small Mermaid flowchart of the confirmed main path, or an explicit note explaining why it cannot yet be drawn;
 - an evidence table with paths, symbols or SQL objects, and findings;
 - verification limits and concrete follow-up checks for Oracle, Redis, schedulers, triggers, external systems, browser behavior, or deployment when those cannot be confirmed locally.
 
