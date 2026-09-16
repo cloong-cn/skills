@@ -1,0 +1,8 @@
+interface:
+  display_name: "业务逻辑文档整理"
+  short_description: "追踪代码与数据来源，生成可维护的业务逻辑文档"
+  brand_color: "#2563EB"
+  default_prompt: "使用 $business-logic-documenter 梳理这个功能的完整业务逻辑和所有数据来源。"
+
+policy:
+  allow_implicit_invocation: true
